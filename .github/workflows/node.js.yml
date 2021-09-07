@@ -21,8 +21,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Read Files Before
+      run: ls -a
     - name: Install Dependencies
       run: npm install
+    - name: Read Files After
+      run: ls -a
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
